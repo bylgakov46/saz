@@ -73,7 +73,7 @@ Bootstrap
           <div class="jumbotron">
             <h1>Отчёт сканирования<br/> 
               [HTML]<img src="https://3d-stl.com/upload/iblock/948/9484c3a270955c4c5a7e4a52acdd1ec1.png">[/HTML]
-              <small>Программное средство анализа защищенности узлов информационных систем</small></h1>
+              </h1>
             <p class="lead">
               Время сканирования: <xsl:value-of select="/nmaprun/@startstr"/> – <xsl:value-of select="/nmaprun/runstats/finished/@timestr"/><br/>
               <xsl:value-of select="/nmaprun/runstats/hosts/@total"/> узлов проверено.
