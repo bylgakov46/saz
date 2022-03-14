@@ -62,22 +62,21 @@ Bootstrap
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="#scannedhosts">Scanned Hosts</a></li>
-                <li><a href="#onlinehosts">Online Hosts</a></li>
-                <li><a href="#openservices">Open Services</a></li>
+                <li><a href="#scannedhosts">Просканированные узлы</a></li>
+                <li><a href="#onlinehosts">Доступные узлы</a></li>
+                <li><a href="#openservices">Открытые службы</a></li>
               </ul>
             </div>
           </div>
         </nav>
         <div class="container">
           <div class="jumbotron">
-            <h1>Отчёт сканирования<br/><small>Программное средство анализа защищенности ИС</small></h1>
-            <pre style="white-space:pre-wrap; word-wrap:break-word;"><xsl:value-of select="/nmaprun/@args"/></pre>
+            <h1>Отчёт сканирования<br/><small>Программное средство анализа защищенности узлов информационных систем</small></h1>
             <p class="lead">
-              <xsl:value-of select="/nmaprun/@startstr"/> – <xsl:value-of select="/nmaprun/runstats/finished/@timestr"/><br/>
-              <xsl:value-of select="/nmaprun/runstats/hosts/@total"/> hosts scanned.
-              <xsl:value-of select="/nmaprun/runstats/hosts/@up"/> hosts up.
-              <xsl:value-of select="/nmaprun/runstats/hosts/@down"/> hosts down.
+              Время сканирования: <xsl:value-of select="/nmaprun/@startstr"/> – <xsl:value-of select="/nmaprun/runstats/finished/@timestr"/><br/>
+              <xsl:value-of select="/nmaprun/runstats/hosts/@total"/> узлов проверено.
+              <xsl:value-of select="/nmaprun/runstats/hosts/@up"/> узлов доступно.
+              <xsl:value-of select="/nmaprun/runstats/hosts/@down"/> узлов недоступно.
             </p>
             <div class="progress">
               <div class="progress-bar progress-bar-success" style="width: 0%">
@@ -92,16 +91,16 @@ Bootstrap
               </div>
             </div>
           </div>
-          <h2 id="scannedhosts" class="target">Scanned Hosts<xsl:if test="/nmaprun/runstats/hosts/@down > 1024"><small> (offline hosts are hidden)</small></xsl:if></h2>
+          <h2 id="scannedhosts" class="target">Проверено узлов<xsl:if test="/nmaprun/runstats/hosts/@down > 1024"><small> (offline hosts are hidden)</small></xsl:if></h2>
           <div class="table-responsive">
             <table id="table-overview" class="table table-striped dataTable" role="grid">
               <thead>
                 <tr>
-                  <th>State</th>
-                  <th>Address</th>
-                  <th>Hostname</th>
-                  <th>TCP (open)</th>
-                  <th>UDP (open)</th>
+                  <th>Статус</th>
+                  <th>Адресс</th>
+                  <th>Имя узла</th>
+                  <th>Открытые TCP порты</th>
+                  <th>Открытые UDP порты</th>
                 </tr>
               </thead>
               <tbody>
@@ -144,32 +143,32 @@ Bootstrap
           <xsl:for-each select="/nmaprun/host[status/@state='up']">
             <div class="panel panel-default">
               <div class="panel-heading clickable" data-toggle="collapse">
-                  <xsl:attribute name="id">onlinehosts-<xsl:value-of select="translate(address/@addr, '.', '-')"/></xsl:attribute>
+                  <xsl:attribute name="id">Доступные узлы<xsl:value-of select="translate(address/@addr, '.', '-')"/></xsl:attribute>
                   <xsl:attribute name="data-target">#<xsl:value-of select="translate(address/@addr, '.', '-')"/></xsl:attribute>
                 <h3 class="panel-title"><xsl:value-of select="address/@addr"/><xsl:if test="count(hostnames/hostname) > 0"> - <xsl:value-of select="hostnames/hostname/@name"/></xsl:if></h3>
               </div>
               <div class="panel-body collapse in">
                 <xsl:attribute name="id"><xsl:value-of select="translate(address/@addr, '.', '-')"/></xsl:attribute>
                 <xsl:if test="count(hostnames/hostname) > 0">
-                  <h4>Hostnames</h4>
+                  <h4>Имя узла</h4>
                   <ul>
                     <xsl:for-each select="hostnames/hostname">
                       <li><xsl:value-of select="@name"/> (<xsl:value-of select="@type"/>)</li>
                     </xsl:for-each>
                   </ul>
                 </xsl:if>
-                <h4>Ports</h4>
+                <h4>Порты</h4>
                 <div class="table-responsive">
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <th>Port</th>
-                        <th>Protocol</th>
-                        <th>State<br/>Reason</th>
-                        <th>Service</th>
-                        <th>Product</th>
-                        <th>Version</th>
-                        <th>Extra Info</th>
+                        <th>Порт</th>
+                        <th>Протокол</th>
+                        <th>Состояние<br/>Причина</th>
+                        <th>Служба</th>
+                        <th>ПО</th>
+                        <th>Версия</th>
+                        <th>Дополнительная информация</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -261,14 +260,14 @@ Bootstrap
             <table id="table-services" class="table table-striped dataTable" role="grid">
               <thead>
                 <tr>
-                  <th>Address</th>
-                  <th>Port</th>
-                  <th>Protocol</th>
-                  <th>Service</th>
-                  <th>Product</th>
-                  <th>Version</th>
+                  <th>Адресс</th>
+                  <th>Порт</th>
+                  <th>Протокол</th>
+                  <th>Служба</th>
+                  <th>ПО</th>
+                  <th>Версия</th>
                   <th>CPE</th>
-                  <th>Extra info</th>
+                  <th>Дополнительная информация</th>
                 </tr>
               </thead>
               <tbody>
