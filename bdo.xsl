@@ -139,7 +139,7 @@ Bootstrap
               "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ]
             });
           </script>
-          <h2 id="onlinehosts" class="target">Online Hosts</h2>
+          <h2 id="onlinehosts" class="target">Доступные узлы</h2>
           <xsl:for-each select="/nmaprun/host[status/@state='up']">
             <div class="panel panel-default">
               <div class="panel-heading clickable" data-toggle="collapse">
@@ -307,7 +307,7 @@ Bootstrap
         <footer class="footer">
           <div class="container">
             <p class="text-muted">
-              Булгаков Д.О..<br/>
+              Булгаков Д.О.<br/>
             </p>
           </div>
         </footer>
