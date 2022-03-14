@@ -97,7 +97,7 @@ Bootstrap
               <thead>
                 <tr>
                   <th>Статус</th>
-                  <th>Адресс</th>
+                  <th>Адрес</th>
                   <th>Имя узла</th>
                   <th>Открытые TCP порты</th>
                   <th>Открытые UDP порты</th>
@@ -240,13 +240,13 @@ Bootstrap
                   <pre style="white-space:pre-wrap; word-wrap:break-word;"><xsl:value-of select="@output"/></pre>
                 </xsl:for-each>
                 <xsl:if test="count(os/osmatch) > 0">
-                  <h4>OS Detection</h4>
+                  <h4>ОС</h4>
                   <xsl:for-each select="os/osmatch">
-                    <h5>OS details: <xsl:value-of select="@name"/> (<xsl:value-of select="@accuracy"/>%)</h5>
+                    <h5>детали ОС: <xsl:value-of select="@name"/> (<xsl:value-of select="@accuracy"/>%)</h5>
                     <xsl:for-each select="osclass">
                       Device type: <xsl:value-of select="@type"/><br/>
                       Running: <xsl:value-of select="@vendor"/><xsl:text> </xsl:text><xsl:value-of select="@osfamily"/><xsl:text> </xsl:text><xsl:value-of select="@osgen"/> (<xsl:value-of select="@accuracy"/>%)<br/>
-                      OS CPE: <a><xsl:attribute name="href">https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=<xsl:value-of select="cpe"/></xsl:attribute><xsl:value-of select="cpe"/></a>
+                      OС CPE: <a><xsl:attribute name="href">https://nvd.nist.gov/vuln/search/results?form_type=Advanced&amp;cves=on&amp;cpe_version=<xsl:value-of select="cpe"/></xsl:attribute><xsl:value-of select="cpe"/></a>
                       <br/>
                     </xsl:for-each>
                     <br/>
@@ -255,12 +255,12 @@ Bootstrap
               </div>
             </div>
           </xsl:for-each>
-          <h2 id="openservices" class="target">Open Services</h2>
+          <h2 id="openservices" class="target">Службы</h2>
           <div class="table-responsive">
             <table id="table-services" class="table table-striped dataTable" role="grid">
               <thead>
                 <tr>
-                  <th>Адресс</th>
+                  <th>Адрес</th>
                   <th>Порт</th>
                   <th>Протокол</th>
                   <th>Служба</th>
