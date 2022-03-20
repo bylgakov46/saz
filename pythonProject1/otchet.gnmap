@@ -1,0 +1,4 @@
+# Nmap 7.92 scan initiated Mon Mar 14 17:00:24 2022 as: nmap -sV -oA otchet --stylesheet https://raw.githubusercontent.com/bylgakov46/saz/main/bdo.xsl --script vuln 127.0.0.1
+Host: 127.0.0.1 (localhost)	Status: Up
+Host: 127.0.0.1 (localhost)	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 445/open/tcp//microsoft-ds?///, 902/open/tcp//ssl|vmware-auth//VMware Authentication Daemon 1.10 (Uses VNC, SOAP)/, 912/open/tcp//vmware-auth//VMware Authentication Daemon 1.0 (Uses VNC, SOAP)/	Ignored State: closed (996)
+# Nmap done at Mon Mar 14 17:00:54 2022 -- 1 IP address (1 host up) scanned in 30.45 seconds
