@@ -1,4 +1,0 @@
-# Nmap 7.92 scan initiated Fri Feb  4 17:03:56 2022 as: nmap -sV -oA scanme --stylesheet https://raw.githubusercontent.com/bylgakov46/saz/main/bdo.xsl --script vulners 127.0.0.1
-Host: 127.0.0.1 (addintools.com)	Status: Up
-Host: 127.0.0.1 (addintools.com)	Ports: 135/open/tcp//msrpc//Microsoft Windows RPC/, 445/open/tcp//microsoft-ds//Microsoft Windows 7 - 10 microsoft-ds (workgroup: CLASS)/, 808/open/tcp//mc-nmf//.NET Message Framing/, 902/open/tcp//ssl|vmware-auth//VMware Authentication Daemon 1.10 (Uses VNC, SOAP)/, 912/open/tcp//vmware-auth//VMware Authentication Daemon 1.0 (Uses VNC, SOAP)/, 5432/open/tcp//postgresql//PostgreSQL DB 9.5.6/, 9001/open/tcp//http//Microsoft HTTPAPI httpd 2.0 (SSDP|UPnP)/	Ignored State: closed (993)
-# Nmap done at Fri Feb  4 17:04:08 2022 -- 1 IP address (1 host up) scanned in 11.81 seconds
